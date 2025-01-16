@@ -1,9 +1,9 @@
 #include "SceneGraph.h"
 
-#define SDF 1
+#define SDF 0
 SceneGraph::SceneGraph()
 {
-	pbd_center = vec3(0, 1.1, 0);
+	pbd_center = vec3(0, 0.5, 0);
 
 #if SDF
 	_res = 64;
@@ -18,9 +18,9 @@ SceneGraph::SceneGraph()
 	_tree->computeTree(mesh_center + vec3(-2, -2, -2), mesh_center + vec3(2, 2, 2));
 	buildRegularSDF();
 
-	_pbdObj = new PBD_ClothObject("OBJ\\lowPlane2.obj", pbd_center, _mesh->_initCenter, _gridDistance, _gridPosition, _res, _gridLength);
+	_pbdObj = new PBD_ClothObject("OBJ\\lowPlane1.obj", pbd_center, _mesh->_initCenter, _gridDistance, _gridPosition, _res, _gridLength);
 #else
-	_pbdObj = new PBD_ClothObject("OBJ\\lowPlane2.obj", pbd_center);
+	_pbdObj = new PBD_ClothObject("OBJ\\lowPlane1.obj", pbd_center);
 #endif
 }
 

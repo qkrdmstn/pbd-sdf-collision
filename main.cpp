@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "GL\glut.h"
 #include "SceneGraph.h"
+#include <time.h>
 
 float _zoom = 4.0f; // 화면 확대,축소
 float _rot_x = 0.0f; // x축 회전
@@ -15,6 +16,10 @@ bool simulation = false;
 
 SceneGraph* _scene;
 int _renderMode = 0;
+int _drawOption = 1;
+int frame = 0, curTime, timebase = 0;
+int _frame = 0;
+double fps = 0;
 
 void Init(void)
 {
@@ -23,6 +28,42 @@ void Init(void)
 	// ...
 	_scene = new SceneGraph();
 }
+
+//void DrawText(float x, float y, const char* text, void* font = NULL)
+//{
+//	glColor3f(1, 1, 1);
+//	glDisable(GL_DEPTH_TEST);
+//
+//	glMatrixMode(GL_PROJECTION);
+//	glPushMatrix();
+//	glLoadIdentity();
+//	glOrtho(0.0, (double)_width, 0.0, (double)_height, -1.0, 1.0);
+//
+//	glMatrixMode(GL_MODELVIEW);
+//	glPushMatrix();
+//	glLoadIdentity();
+//
+//	if (font == NULL) {
+//		font = GLUT_BITMAP_9_BY_15;
+//	}
+//
+//	size_t len = strlen(text);
+//
+//	glRasterPos2f(x, y);
+//	for (const char* letter = text; letter < text + len; letter++) {
+//		if (*letter == '\n') {
+//			y -= 12.0f;
+//			glRasterPos2f(x, y);
+//		}
+//		glutBitmapCharacter(font, *letter);
+//	}
+//
+//	glPopMatrix();
+//	glMatrixMode(GL_PROJECTION);
+//	glPopMatrix();
+//	glMatrixMode(GL_MODELVIEW);
+//	glEnable(GL_DEPTH_TEST);
+//}
 
 void Draw(void)
 {
@@ -43,11 +84,17 @@ void Draw(void)
 	}
 
 	glDisable(GL_LIGHTING);
+
+	//char text[100];
+	//sprintf(text, "Frame: %d", _frame);
+	//DrawText(10.0f, 760.0f, text);
+
+	//sprintf(text, "FPS: %f", fps);
+	//DrawText(10.0f, 780.0f, text);
 }
 
 void Update(void)
 {
-	static int frame = 0;
 	if (simulation) {
 		//if (frame == 0 || frame % 4 == 0) {
 		//   static int index = 0;
@@ -55,9 +102,26 @@ void Update(void)
 		//   sprintf(filename, "capture\\capture-%d.bmp", index++);
 		//   Capture(filename, width, height);
 		//}
+		frame++;
+
+		int startTime = clock();
 		_scene->simulation(0.015f);
+		int endTime = clock();
+		curTime += endTime - startTime;
+		if (curTime > 1000)
+		{
+			fps = frame * 1000.0 / (curTime);
+			curTime = 0;
+			frame = 0;
+			printf("%f\n", fps);
+
+		}
+			printf("%d\n", frame);
 	}
-	frame++;
+	_frame++;
+
+
+
 	::glutPostRedisplay();
 }
 

@@ -328,6 +328,8 @@ void PBD_ClothObject::integrate(double dt)
 {
 	for (int i = 0; i < _vertices.size(); i++) {
 
+		if (_vertices[i]->_pos.y() >= 0.9)
+			continue;
 		_vertices[i]->_vel = (_vertices[i]->_pos1 - _vertices[i]->_pos) / dt;
 
 		_vertices[i]->_pos = _vertices[i]->_pos1;
@@ -336,41 +338,41 @@ void PBD_ClothObject::integrate(double dt)
 
 void PBD_ClothObject::simulation(double dt)
 {
-	////Iterator
-	applyExtForces(dt);
+	//////Iterator
+	//applyExtForces(dt);
 
-	for (int k = 0; k < 10; k++) {
-		updateStructuralSprings();
-		updateBendSprings();
-
-	}
-	integrate(dt);
-	//SdfCollision(dt);
-	LevelSetCollision();
-
-	//////Sub-Steps
-	//int subTime = 10;
-	//double subDt = dt / subTime;
-	//for (int i = 0; i < subTime; i++)
-	//{
-	//	applyExtForces(subDt);
+	//for (int k = 0; k < 10; k++) {
 	//	updateStructuralSprings();
 	//	updateBendSprings();
-	//	//printf("mag: %f \n", (_vertices[25]->_pos - _vertices[25]->_pos1).getNorm());
-
-	//	//double magSum = 0;
-	//	//for (int i = 0; i < _vertices.size(); i++)
-	//	//{
-	//	//	magSum += (_vertices[i]->_pos - _vertices[i]->_pos1).getNorm();
-	//	//}
-	//	//printf("%f\n", magSum / _vertices.size());
-
-	//	integrate(subDt);
-	//	SdfCollision(subDt);
-	//	//_vertices[25]->_pos.print();
-	//	//printf("%f\n", _vertices[25]->_pos[1]);
 
 	//}
+	//integrate(dt);
+	////SdfCollision(dt);
+	//LevelSetCollision();
+
+	////Sub-Steps
+	int subTime = 10;
+	double subDt = dt / subTime;
+	for (int i = 0; i < subTime; i++)
+	{
+		applyExtForces(subDt);
+		updateStructuralSprings();
+		updateBendSprings();
+		//printf("mag: %f \n", (_vertices[25]->_pos - _vertices[25]->_pos1).getNorm());
+
+		//double magSum = 0;
+		//for (int i = 0; i < _vertices.size(); i++)
+		//{
+		//	magSum += (_vertices[i]->_pos - _vertices[i]->_pos1).getNorm();
+		//}
+		//printf("%f\n", magSum / _vertices.size());
+
+		integrate(subDt);
+		//SdfCollision(subDt);
+		//_vertices[25]->_pos.print();
+		//printf("%f\n", _vertices[25]->_pos[1]);
+
+	}
 
 
 }
