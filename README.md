@@ -1,4 +1,4 @@
-# 📑 목차
+## 📑 목차
 - [🧾 프로젝트 개요](#-프로젝트-개요)
 - [📆 개발 인원 및 기간](#-개발-인원-및-기간)
 - [🛠️ 주요 기능](#️-주요-기능)
@@ -8,18 +8,18 @@
 - [🔖 관련 블로그 글](#-관련-블로그-글)
 - [📚 참고 자료](#-참고-자료)
 
-# 🧾 프로젝트 개요
+## 🧾 프로젝트 개요
 이 프로젝트는 3D 삼각형 메시로 구성된 고체에 대해 **Signed Distance Field(SDF)** 를 생성하고,  
  **K-D 트리(K-dimensional tree)** 를 활용하여 각 복셀에 대한 최단 거리 계산을 최적화하는 것을 목표로 합니다.
 
 
-# 📆 개발 인원 및 기간
+## 📆 개발 인원 및 기간
 - 1인 개발
 - 2023년 6월 ~ 2024년 1월 (약 8개월)
 
 
 
-# 🛠️ 주요 기능
+## 🛠️ 주요 기능
 - 입력 메시로부터 Signed Distance Field(SDF) 3D 격자 생성
 - K-D 트리 기반 최단 거리 계산 최적화
 - 삼각형-점 거리 계산 로직 구현
@@ -28,7 +28,7 @@
 
 
 
-# 💻 사용 기술
+## 💻 사용 기술
 - **개발 언어**: C, C++
 - **라이브러리**: OpenGL, OpenCV
 - **시뮬레이션 기법**:
@@ -41,7 +41,7 @@
   - AABB 기반 culling
   
 
-# 📷 시연 영상
+## 📷 시연 영상
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cd435f89-39eb-44a6-a240-41c691e5e963" width="45%">
   <img src="https://github.com/user-attachments/assets/959a3b2f-9261-4467-856a-0d8e0f62855e" width="45%"><br>
@@ -54,7 +54,7 @@
 
 
 
-# 💡 프로젝트 회고
+## 💡 프로젝트 회고
 이전에 진행했던 SDF 기반 충돌 처리는 방정식으로 표현 가능한 물체에 대해서만 가능했습니다.
 이를 해결하기 위해 **임의의 메시에 대해 SDF**를 생성하고, 더 나아가 **K-D 트리 탐색을 통해 알고리즘적으로 연산을 줄이는 경험**을 할 수 있었습니다.
 
@@ -62,11 +62,11 @@
 
 
 
-# 🔖 관련 블로그 글
+## 🔖 관련 블로그 글
 - [🔗 자세한 구현 및 학습 과정 정리 (Tistory)](https://coding-l7.tistory.com/category/%EB%AC%BC%EB%A6%AC%20%EA%B8%B0%EB%B0%98%20%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/Cloth%20Simulation)
 
   
-# 📚 참고 자료
+## 📚 참고 자료
 
 ### Generating SDF
 - [Generating Signed Distance Fields from Triangle Meshes – Bærentzen & Aanæs](https://www2.imm.dtu.dk/pubdb/edoc/imm1289.pdf)
