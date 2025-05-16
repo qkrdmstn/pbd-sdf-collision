@@ -59,7 +59,7 @@
 </p>
 
 
-[🔗 시연 영상 링크 (Youtube)](https://www.youtube.com/playlist?list=PLL7N-Nw3U-P1VskT4llhvH_EJs00NhZ-c)
+[🔗 결과 영상 링크 (Youtube)](https://www.youtube.com/playlist?list=PLL7N-Nw3U-P1VskT4llhvH_EJs00NhZ-c)
 
 <br>
 
