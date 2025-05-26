@@ -10,6 +10,18 @@
 
 <br>
 
+## 📷 결과 영상
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cd435f89-39eb-44a6-a240-41c691e5e963" width="45%">
+  <img src="https://github.com/user-attachments/assets/959a3b2f-9261-4467-856a-0d8e0f62855e" width="45%"><br>
+  <img src="https://github.com/user-attachments/assets/4e1b82a9-a941-41d4-b9a8-480f4b562da4" width="45%">
+  <img src="https://github.com/user-attachments/assets/72b28dcd-94e8-46ac-81ec-90e0ca17f708" width="45%">
+</p>
+
+[🔗 결과 영상 링크 (Youtube)](https://www.youtube.com/playlist?list=PLL7N-Nw3U-P1VskT4llhvH_EJs00NhZ-c)
+
+<br>
+
 ## 🧾 프로젝트 개요
 - 이 프로젝트는 3D 삼각형 메시로 구성된 오브젝트에 대해 **Signed Distance Field(SDF)** 를 생성합니다.
 - **K-D 트리(K-dimensional tree)** 를 활용하여 각 복셀(Cell)의 최근접 삼각형과의 거리를 효율적으로 계산하는 것을 목표로 합니다.
@@ -48,19 +60,6 @@
 - 점-삼각형 간 거리 계산
 - AABB 기반 culling
   
-<br>
-
-## 📷 결과 영상
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/cd435f89-39eb-44a6-a240-41c691e5e963" width="45%">
-  <img src="https://github.com/user-attachments/assets/959a3b2f-9261-4467-856a-0d8e0f62855e" width="45%"><br>
-  <img src="https://github.com/user-attachments/assets/4e1b82a9-a941-41d4-b9a8-480f4b562da4" width="45%">
-  <img src="https://github.com/user-attachments/assets/72b28dcd-94e8-46ac-81ec-90e0ca17f708" width="45%">
-</p>
-
-
-[🔗 결과 영상 링크 (Youtube)](https://www.youtube.com/playlist?list=PLL7N-Nw3U-P1VskT4llhvH_EJs00NhZ-c)
-
 <br>
 
 ## 💡 프로젝트 회고
